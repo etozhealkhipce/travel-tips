@@ -1,0 +1,16 @@
+{
+  "title": "Welcome Back",
+  "subtitle": "Log in to access your travel tips",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "••••••••",
+  "submitButton": "Log In",
+  "submitting": "Logging in...",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign Up",
+  "validation": {
+    "invalidEmail": "Invalid email",
+    "passwordMinLength": "Password must be at least 6 characters"
+  }
+}

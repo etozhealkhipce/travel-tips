@@ -1,0 +1,16 @@
+{
+  "title": "Қайта келуіңізбен",
+  "subtitle": "Саяхат кеңестеріне қол жеткізу үшін жүйеге кіріңіз",
+  "emailLabel": "Электрондық пошта мекенжайы",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Құпия сөз",
+  "passwordPlaceholder": "••••••••",
+  "submitButton": "Кіру",
+  "submitting": "Кіру...",
+  "noAccount": "Аккаунтыңыз жоқ па?",
+  "signUp": "Тіркелу",
+  "validation": {
+    "invalidEmail": "Жарамсыз email",
+    "passwordMinLength": "Құпия сөз кемінде 6 таңбадан тұруы керек"
+  }
+}

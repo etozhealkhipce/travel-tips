@@ -1,0 +1,5 @@
+{
+  "requestError": "Ошибка запроса",
+  "internalServerError": "Внутренняя ошибка сервера",
+  "pageNotFound": "Страница не найдена"
+}

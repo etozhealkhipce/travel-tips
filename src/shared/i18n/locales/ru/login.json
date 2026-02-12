@@ -1,0 +1,16 @@
+{
+  "title": "С возвращением",
+  "subtitle": "Войдите, чтобы получить доступ к своим советам путешественникам",
+  "emailLabel": "Адрес электронной почты",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Пароль",
+  "passwordPlaceholder": "••••••••",
+  "submitButton": "Войти",
+  "submitting": "Вход...",
+  "noAccount": "Нет аккаунта?",
+  "signUp": "Зарегистрироваться",
+  "validation": {
+    "invalidEmail": "Неверный email",
+    "passwordMinLength": "Пароль должен содержать минимум 6 символов"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    /* Project settings */
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client", "node"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "verbatimModuleSyntax": true,
+
+    /* Bundler mode */
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "~/renderer/*": ["./renderer/*"],
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "@app": ["./src/app"],
+      "@app/*": ["./src/app/*"],
+      "@shared": ["./src/shared"],
+      "@shared/*": ["./src/shared/*"],
+      "@public/*": ["./public/*"]
+    }
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "esm": true,
+    "compilerOptions": {
+      "module": "ES2022",
+      "moduleResolution": "Bundler"
+    }
+  },
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["src", "pages", "renderer"],
+  "exclude": ["dist"]
+}

@@ -1,0 +1,5 @@
+{
+  "requestError": "Request Error",
+  "internalServerError": "Internal Server Error",
+  "pageNotFound": "Page Not Found"
+}
