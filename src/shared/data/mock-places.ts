@@ -11,6 +11,9 @@ export interface Place {
   distance: string;
   hours: string;
   imageUrl: string;
+  images: string[];
+  price?: string;
+  isFeatured?: boolean;
 }
 
 export const MOCK_PLACES: Place[] = [
@@ -25,6 +28,12 @@ export const MOCK_PLACES: Place[] = [
     distance: '0.5 miles away',
     hours: 'Open until 8 PM',
     imageUrl: 'https://images.unsplash.com/photo-1566127992631-137a642a90f4?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1566127992631-137a642a90f4?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1503152394-c571994fd383?w=600&h=450&fit=crop',
+    ],
+    isFeatured: true,
   },
   {
     id: '2',
@@ -37,6 +46,12 @@ export const MOCK_PLACES: Place[] = [
     distance: '0.3 miles away',
     hours: 'Open until 11 PM',
     imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=450&fit=crop',
+    ],
+    price: '£30–60',
   },
   {
     id: '3',
@@ -49,6 +64,10 @@ export const MOCK_PLACES: Place[] = [
     distance: '0.8 miles away',
     hours: 'Open until 6 PM',
     imageUrl: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=600&h=450&fit=crop',
+    ],
   },
   {
     id: '4',
@@ -61,6 +80,12 @@ export const MOCK_PLACES: Place[] = [
     distance: '1.2 miles away',
     hours: 'Open until 10 PM',
     imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1529180184525-78f99adb8e98?w=600&h=450&fit=crop',
+    ],
+    isFeatured: true,
   },
   {
     id: '5',
@@ -73,6 +98,11 @@ export const MOCK_PLACES: Place[] = [
     distance: '2.1 miles away',
     hours: 'Open until 7 PM',
     imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&h=450&fit=crop',
+    ],
+    price: '£5–50',
   },
   {
     id: '6',
@@ -85,6 +115,12 @@ export const MOCK_PLACES: Place[] = [
     distance: '1.5 miles away',
     hours: 'Open until 9 PM',
     imageUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1520986606214-8b456906c813?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1533929736562-87d308454507?w=600&h=450&fit=crop',
+    ],
+    isFeatured: true,
   },
   {
     id: '7',
@@ -97,6 +133,12 @@ export const MOCK_PLACES: Place[] = [
     distance: '0.6 miles away',
     hours: 'Open 24 hours',
     imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1590490360182-c33d67d3b1a0?w=600&h=450&fit=crop',
+    ],
+    price: '£350/night',
   },
   {
     id: '8',
@@ -109,6 +151,150 @@ export const MOCK_PLACES: Place[] = [
     distance: '0.9 miles away',
     hours: 'Open until 2 AM',
     imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&h=450&fit=crop',
+    ],
+    price: '£15–25',
+  },
+  {
+    id: '9',
+    name: 'Kensington Palace',
+    category: 'sights',
+    lat: 51.5058,
+    lng: -0.1877,
+    rating: 4.7,
+    description: 'Royal residence with stunning gardens and historical exhibitions',
+    distance: '1.8 miles away',
+    hours: 'Open until 6 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1582547722983-eb3c6fc4e94a?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1582547722983-eb3c6fc4e94a?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=450&fit=crop',
+    ],
+    price: '£20',
+    isFeatured: true,
+  },
+  {
+    id: '10',
+    name: 'Dishoom King\'s Cross',
+    category: 'food',
+    lat: 51.5355,
+    lng: -0.1247,
+    rating: 4.6,
+    description: 'Award-winning Bombay-inspired café with vibrant atmosphere and legendary brunch',
+    distance: '1.1 miles away',
+    hours: 'Open until 11 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=450&fit=crop',
+    ],
+    price: '£20–40',
+  },
+  {
+    id: '11',
+    name: 'Harrods',
+    category: 'shopping',
+    lat: 51.4994,
+    lng: -0.1634,
+    rating: 4.5,
+    description: 'World-famous luxury department store with opulent interiors',
+    distance: '1.3 miles away',
+    hours: 'Open until 9 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1528698827591-e19cef51dfeb?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1528698827591-e19cef51dfeb?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&h=450&fit=crop',
+    ],
+    isFeatured: true,
+  },
+  {
+    id: '12',
+    name: 'The Connaught',
+    category: 'hotels',
+    lat: 51.5122,
+    lng: -0.1507,
+    rating: 4.9,
+    description: 'Ultra-luxury Mayfair hotel with Michelin-starred dining and bespoke cocktails',
+    distance: '0.7 miles away',
+    hours: 'Open 24 hours',
+    imageUrl: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=450&fit=crop',
+    ],
+    price: '£600/night',
+  },
+  {
+    id: '13',
+    name: 'Fabric Nightclub',
+    category: 'nightlife',
+    lat: 51.5199,
+    lng: -0.1025,
+    rating: 4.3,
+    description: 'Legendary electronic music venue with three dance floors and world-class DJs',
+    distance: '1.4 miles away',
+    hours: 'Open Fri–Sun until 6 AM',
+    imageUrl: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=450&fit=crop',
+    ],
+    price: '£20–30',
+  },
+  {
+    id: '14',
+    name: 'Borough Market',
+    category: 'food',
+    lat: 51.5055,
+    lng: -0.0910,
+    rating: 4.7,
+    description: 'London\'s most renowned food market with artisan producers and street food stalls',
+    distance: '1.6 miles away',
+    hours: 'Open until 5 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=450&fit=crop',
+    ],
+    price: '£5–15',
+    isFeatured: true,
+  },
+  {
+    id: '15',
+    name: 'St Paul\'s Cathedral',
+    category: 'museums',
+    lat: 51.5138,
+    lng: -0.0984,
+    rating: 4.8,
+    description: 'Masterpiece of English Baroque architecture with breathtaking dome views',
+    distance: '1.0 miles away',
+    hours: 'Open until 4:30 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=450&fit=crop',
+    ],
+    price: '£21',
+  },
+  {
+    id: '16',
+    name: 'Sky Garden',
+    category: 'sights',
+    lat: 51.5113,
+    lng: -0.0836,
+    rating: 4.5,
+    description: 'Free public garden at the top of the Walkie Talkie building with 360° London views',
+    distance: '1.3 miles away',
+    hours: 'Open until 9 PM',
+    imageUrl: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&h=300&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&h=450&fit=crop',
+      'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=450&fit=crop',
+    ],
+    price: 'Free',
   },
 ];
 
@@ -120,3 +306,18 @@ export const CATEGORIES = [
   { id: 'shopping', label: 'Shopping', icon: 'shopping-bag' },
   { id: 'nightlife', label: 'Nightlife', icon: 'music' },
 ] as const;
+
+export const MOCK_DESTINATIONS = [
+  { name: 'London', country: 'United Kingdom', emoji: '🇬🇧' },
+  { name: 'Paris', country: 'France', emoji: '🇫🇷' },
+  { name: 'Tokyo', country: 'Japan', emoji: '🇯🇵' },
+  { name: 'New York', country: 'United States', emoji: '🇺🇸' },
+  { name: 'Barcelona', country: 'Spain', emoji: '🇪🇸' },
+  { name: 'Rome', country: 'Italy', emoji: '🇮🇹' },
+  { name: 'Dubai', country: 'UAE', emoji: '🇦🇪' },
+  { name: 'Istanbul', country: 'Turkey', emoji: '🇹🇷' },
+  { name: 'Bangkok', country: 'Thailand', emoji: '🇹🇭' },
+  { name: 'Amsterdam', country: 'Netherlands', emoji: '🇳🇱' },
+  { name: 'Berlin', country: 'Germany', emoji: '🇩🇪' },
+  { name: 'Lisbon', country: 'Portugal', emoji: '🇵🇹' },
+];

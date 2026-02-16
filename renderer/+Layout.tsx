@@ -10,10 +10,9 @@ import { LayoutHeader } from "~/widgets/layout/header";
 
 export default function LayoutDefault({ children }: { children: React.ReactNode }) {
   return (
-      <div className="bg-gray-200 overflow-hidden flex flex-col h-screen">
+      <div className="bg-white overflow-hidden flex flex-col h-screen">
         <LayoutHeader />
-        <main className="flex-grow overflow-y-auto p-4 app-scroll">
-
+        <main className="flex-grow overflow-y-auto app-scroll">
           <Suspense fallback={<div className="flex h-full w-full items-center justify-center text-gray-500">Loading...</div>}>
             {children}
           </Suspense>

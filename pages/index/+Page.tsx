@@ -1,5 +1,5 @@
-import { MapExplorePage } from "@/widgets/map-explore";
+import { HomePage } from "@/widgets/home-page";
 
 export default function Page() {
-  return <MapExplorePage />;
+  return <HomePage />;
 }
