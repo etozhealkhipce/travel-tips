@@ -1,0 +1,41 @@
+app:
+  name: travel-tips-frontend
+  namespace: sskd
+  replicas: 1
+  port: 80
+  healthPath: /
+
+  image:
+    repository: ghcr.io/etozhealkhipce/travel-tips
+    tag: latest
+    pullPolicy: Always
+
+  imagePullSecrets:
+    - name: travel-tips-frontend-ghcr-secret
+
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "128Mi"
+      cpu: "100m"
+
+  ingress:
+    enabled: true
+    host: travel-tips.sskd.tech
+    path: /
+    # Route API and admin to backend
+    extraPaths:
+      - path: /api
+        pathType: Prefix
+        serviceName: travel-tips-app
+        servicePort: 1337
+      - path: /admin
+        pathType: Prefix
+        serviceName: travel-tips-app
+        servicePort: 1337
+      - path: /uploads
+        pathType: Prefix
+        serviceName: travel-tips-app
+        servicePort: 1337
