@@ -8,7 +8,7 @@ FROM nginx:alpine as nginx
 FROM base AS deps
 WORKDIR /deps
 
-COPY package.json package.lock* ./
+COPY package.json package-lock.json ./
 
 RUN npm ci
 
