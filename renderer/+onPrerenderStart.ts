@@ -1,17 +1,6 @@
 import { localeDefault, locales, type Locale } from "~/shared/i18n"
 
 // https://vike.dev/onPrerenderStart
-export { onPrerenderStart }
-
-type PageContext = {
-  urlOriginal: string
-  [key: string]: unknown
-}
-
-type PrerenderContext = {
-  pageContexts: PageContext[]
-}
-
 // We only need this for pre-rendered apps https://vike.dev/pre-rendering
 export function onPrerenderStart(prerenderContext: PrerenderContext) {
   const pageContexts: PageContext[] = []
@@ -23,6 +12,15 @@ export function onPrerenderStart(prerenderContext: PrerenderContext) {
       pageContexts,
     },
   }
+}
+
+type PageContext = {
+  urlOriginal: string
+  [key: string]: unknown
+}
+
+type PrerenderContext = {
+  pageContexts: PageContext[]
 }
 
 function duplicateWithLocale(pageContext: PageContext, pageContexts: PageContext[]) {
