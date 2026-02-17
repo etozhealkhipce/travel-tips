@@ -1,42 +1,32 @@
-FROM node:22-alpine as base
-FROM nginx:alpine as nginx
-
 ###################
 # DEPS
 ###################
-
-FROM base AS deps
+FROM node:22-alpine AS deps
 WORKDIR /deps
-
 COPY package.json package-lock.json ./
-
 RUN npm ci
 
 ###################
 # BUILD
 ###################
-
-FROM base AS build
+FROM node:22-alpine AS build
 WORKDIR /build
-
 ENV NODE_ENV production
 
 COPY --from=deps /deps/node_modules ./node_modules
 COPY . .
-
 RUN npm run build
 
 ###################
 # FINAL
 ###################
+FROM node:22-alpine AS final
+WORKDIR /app
 
-FROM nginx AS final
-WORKDIR /final
+# Copy built files
+COPY --from=build /build/dist ./dist
+COPY --from=build /build/package.json ./
+COPY --from=build /deps/node_modules ./node_modules
 
-RUN apk update
-RUN apk add nginx
-
-COPY --from=build /build/dist/client ./
-COPY --from=build /build/nginx.conf /etc/nginx/nginx.conf
-
-CMD ["nginx", "-g", "daemon off;"]
+# Start SSR server
+CMD ["node", "./dist/cli/index"]
