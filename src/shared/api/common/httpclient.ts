@@ -6,7 +6,7 @@ import { NetworkException } from "./exceptions";
 import { API_URL } from "@/shared/env";
 
 // ONLY RELATIVE path to the API
-export const httpClient = wretch(API_URL || "/api/")
+export const httpClient = wretch(API_URL || "/strapi")
   // .headers({
   //   "X-Access-Token": APP_ACCESS_KEY,
   // })

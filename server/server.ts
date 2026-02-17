@@ -64,8 +64,9 @@ export async function createServer(isProduction: boolean) {
   }
 
   // API proxy for development and production
-  // Proxy /api/web/v2/ requests to the backend API
-  app.all("/api/web/v2/*", async (request, reply) => {
+  // Proxy /strapi/* requests to the backend (Strapi admin, API, uploads)
+  app.all("/strapi/*", async (request, reply) => {
+    // Keep /strapi prefix - backend expects requests at /strapi/api/*
     const targetUrl = CONFIG.VITE_API_URL + request.url;
 
     try {
