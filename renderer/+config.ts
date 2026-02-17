@@ -15,7 +15,7 @@ export default {
   // https://vike.dev/meta
   meta: {
     pageStarted: {
-      env: { client: true, server: true },
+      env: { client: true, server: false },
     },
     // https://effector.dev/en/api/effector/scope/
     scope: {

@@ -1,7 +1,7 @@
 import { localeDefault, locales, type Locale } from "~/shared/i18n"
 
 // https://vike.dev/onPrerenderStart
-export default onPrerenderStart
+export { onPrerenderStart }
 
 type PageContext = {
   urlOriginal: string
