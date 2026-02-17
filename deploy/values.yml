@@ -16,7 +16,7 @@ app:
   env:
     NODE_ENV: production
     SERVER_PORT: "3000"
-    VITE_API_URL: http://travel-tips-app:1337
+    VITE_API_URL: http://travel-tips-be:1337
 
   resources:
     requests:
@@ -33,13 +33,13 @@ app:
     extraPaths:
       - path: /api
         pathType: Prefix
-        serviceName: travel-tips-app
+        serviceName: travel-tips-be
         servicePort: 1337
       - path: /admin
         pathType: Prefix
-        serviceName: travel-tips-app
+        serviceName: travel-tips-be
         servicePort: 1337
       - path: /uploads
         pathType: Prefix
-        serviceName: travel-tips-app
+        serviceName: travel-tips-be
         servicePort: 1337
