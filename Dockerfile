@@ -36,7 +36,7 @@ WORKDIR /final
 RUN apk update
 RUN apk add nginx
 
-COPY --from=build /build/dist ./
+COPY --from=build /build/dist/client ./
 COPY --from=build /build/nginx.conf /etc/nginx/nginx.conf
 
 CMD ["nginx", "-g", "daemon off;"]
