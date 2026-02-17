@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "node --no-warnings --loader ts-node/esm server/index.ts",
-    "build": "vite build && tsc -p server",
+    "build": "vike build && tsc -p server",
     "start": "cross-env NODE_ENV=production node ./dist/cli/index",
-    "preview": "vite preview",
+    "preview": "vike preview",
     "prepare": "husky install",
     "test": "vitest",
     "packages:upgrade": "ncu --interactive --format group && npm i --force",
