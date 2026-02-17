@@ -26,7 +26,7 @@ WORKDIR /app
 # Copy built files
 COPY --from=build /build/dist ./dist
 COPY --from=build /build/package.json ./
-COPY --from=build /deps/node_modules ./node_modules
+COPY --from=build /build/node_modules ./node_modules
 
 # Start SSR server
 CMD ["node", "./dist/cli/index"]
