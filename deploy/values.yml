@@ -30,8 +30,10 @@ app:
     enabled: true
     host: travel-tips.sskd.tech
     path: /
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /$2
     extraPaths:
-      - path: /strapi
-        pathType: Prefix
+      - path: /strapi(/|$)(.*)
+        pathType: ImplementationSpecific
         serviceName: travel-tips-be
         servicePort: 1337
