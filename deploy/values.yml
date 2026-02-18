@@ -16,7 +16,8 @@ app:
   env:
     NODE_ENV: production
     SERVER_PORT: "3000"
-    VITE_API_URL: http://travel-tips-be:1337
+    # API URL через публичный ingress бэкенда
+    VITE_API_URL: https://travel-tips.sskd.tech/strapi
 
   resources:
     requests:
@@ -26,19 +27,6 @@ app:
       memory: "256Mi"
       cpu: "200m"
 
+  # Ingress отключен - маршрутизация через backend ingress
   ingress:
-    enabled: true
-    host: travel-tips.sskd.tech
-    path: /
-    # annotations убраны - rewrite больше не нужен
-    extraPaths:
-      # Статические файлы админки (важно: ДО /strapi!)
-      - path: /.strapi
-        pathType: Prefix
-        serviceName: travel-tips-be
-        servicePort: 1337
-      # Все запросы к Strapi (API и админка)
-      - path: /strapi
-        pathType: Prefix
-        serviceName: travel-tips-be
-        servicePort: 1337
+    enabled: false
